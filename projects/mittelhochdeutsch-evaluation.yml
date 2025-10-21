@@ -12,7 +12,11 @@ tags:
   - Historical-Knowledge
   - Medieval-Literature
   - _featured
-systems:
+models:
+  - CORE
+  - FRONTIER
+  - CLAUDES
+system:
   - null
   - >-
     Du bist ein Experte für mittelhochdeutsche Sprache und Literatur. Übersetze
