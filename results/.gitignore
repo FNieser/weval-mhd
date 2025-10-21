@@ -1,0 +1,13 @@
+# Große Rohdaten-Dateien (in ZIP enthalten)
+evaluation-results.json
+
+# Python Cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Temporäre Dateien
+*.tmp
+*.bak
+*~
+
