@@ -887,10 +887,10 @@ def create_html(data, output_path):
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(html)
     
-    print(f"\n✅ Vollständige Visualisierung erstellt!")
-    print(f"📊 {len(prompts)} Prompts x {len(models)} Modelle ({len(detailed_ranking)} Konfigurationen)")
-    print(f"🏆 Top 3: {', '.join([simplify_model_name(m) for m, _ in consolidated_ranking[:3]])}")
-    print(f"📁 Datei: {output_path}")
+    print("\nVisualisierung erstellt!")
+    print(f"{len(prompts)} Prompts x {len(models)} Modelle ({len(detailed_ranking)} Konfigurationen)")
+    print(f"Top 3: {', '.join([simplify_model_name(m) for m, _ in consolidated_ranking[:3]])}")
+    print(f"Datei: {output_path}")
 
 def main():
     if len(sys.argv) < 2:
@@ -902,9 +902,11 @@ def main():
         print(f"Error: File not found at {json_path}")
         sys.exit(1)
     
-    output_dir = Path('c:/Users/fnies/cursortest/weval/upload-to-weval')
+    # Output in results-Verzeichnis neben dem Script
+    script_dir = Path(__file__).parent
+    output_dir = script_dir / 'results'
     output_dir.mkdir(parents=True, exist_ok=True)
-    output_html_path = output_dir / 'mittelhochdeutsch-complete.html'
+    output_html_path = output_dir / f'{json_path.stem}_visualization.html'
     
     print("Lade JSON-Daten...")
     with open(json_path, 'r', encoding='utf-8') as f:
