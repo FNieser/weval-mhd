@@ -103,12 +103,24 @@ Die Evaluation kann auf drei Arten durchgeführt werden:
 Nach einem lokalen Run:
 
 ```bash
-# Visualisierung erstellen:
-python create_complete_visualization.py path/to/results.json
+# Visualisierung mit dem mitgelieferten Script erstellen:
+python create_complete_visualization.py path/to/comparison.json
 
-# Dashboard starten:
+# Erstellt automatisch: ./results/{filename}_visualization.html
+# Beispiel:
+python create_complete_visualization.py \
+  weval-app/.results/live/projects/mittelhochdeutsch-evaluation/3c98ab4c_comparison.json
+
+# ODER: Weval Dashboard starten:
+cd weval-app
 pnpm dev  # Öffne http://localhost:3000
 ```
+
+Das Script erstellt eine interaktive HTML-Visualisierung mit:
+- 🏆 Konsolidiertem Leaderboard (beste Konfiguration pro Modell)
+- 📋 Detailliertem Ranking (alle System-Prompt-Varianten)
+- 📊 Kategorie-Performance
+- 🔥 Interaktiver Heatmap mit Drill-Down Details
 
 ### Autor
 
